@@ -78,3 +78,28 @@ document.querySelectorAll('#b1,#b2').forEach(e => e.addEventListener('change', r
 
 run1();
 run2();
+
+// Mobile Hamburger Menu Toggle
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const navEl = document.querySelector('.top nav');
+
+if (hamburgerBtn && navEl) {
+  hamburgerBtn.addEventListener('click', () => {
+    const isActive = navEl.classList.toggle('active');
+    hamburgerBtn.setAttribute('aria-expanded', isActive);
+  });
+
+  navEl.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navEl.classList.remove('active');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!navEl.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+      navEl.classList.remove('active');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
