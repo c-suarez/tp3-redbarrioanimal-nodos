@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RedBarrioAnimal · Dos sentencias, dos soluciones · IFTS 29</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#inicio">Equipo Nodos · TP3</a>
+    <nav aria-label="Principal">
+      <a href="#startup">Startup</a>
+      <a href="#propuestas">Propuestas</a>
+      <a href="#diagramas">Diagramas</a>
+      <a href="#detalles">Detalles</a>
+      <a href="#equipo">Equipo</a>
+      <button id="theme-toggle" type="button" aria-label="Cambiar tema de color" class="theme-toggle">
+        <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero wrap">
+      <p class="eye">IFTS 29 · Front End · TP3 · Grupo 18</p>
+      <h1>Dos sentencias.<br>Dos soluciones.</h1>
+      <p class="lede">Propuestas de automatización agéntica para <strong>RedBarrioAnimal</strong>, una startup creada por estudiantes del IFTS 16. Bloque asignado: <strong>Impacto e incidencias</strong> (S02-C).</p>
+      <p>
+        <a class="btn" href="#diagramas">Ver los dos recorridos</a>
+        <a class="btn ghost" href="#propuestas">Leer las propuestas</a>
+      </p>
+    </section>
+
+    <section id="startup" class="wrap st">
+      <img class="logo" src="img/logo-redbarrioanimal.png" alt="Logo oficial de RedBarrioAnimal">
+      <div>
+        <p class="eye">Asignación docente · sorteo · S02-C</p>
+        <h2>RedBarrioAnimal</h2>
+        <p class="muted">Donaciones y bienestar animal</p>
+        <p><strong>Objetivo de la startup:</strong> red de donaciones por redondeo de compras para refugios de animales.</p>
+        <p><strong>Necesidad que atendemos:</strong> que quien dona reciba novedades del impacto de su aporte y pueda reclamar un cobro erróneo, sin que el sistema tome solo decisiones sobre dinero.</p>
+        <p><strong>Bloque:</strong> Impacto e incidencias · <strong>Origen:</strong> startup creada por estudiantes del IFTS 16.</p>
+      </div>
+    </section>
+
+    <section id="propuestas" class="wrap">
+      <p class="eye">Dos propuestas</p>
+      <h2>Una solución para cada sentencia</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="tag">FRASE 1 · R5</span>
+          <h3>Agente de novedades de impacto</h3>
+          <blockquote>Si una donación fue confirmada, el donante autorizó recibir novedades y hay una actualización de impacto del refugio beneficiario disponible y aún no enviada a ese donante, el sistema solicita enviar esa actualización.</blockquote>
+          <p>Un agente vigila cada donación confirmada y, solo cuando se cumplen las cuatro condiciones, pide enviar la novedad del refugio. Beneficio: la persona que dona ve el resultado de su aporte, sin mensajes repetidos ni contactos que no autorizó.</p>
+          <a href="#fig1">Ver el diagrama →</a>
+        </article>
+        <article class="card">
+          <span class="tag">FRASE 2 · R6</span>
+          <h3>Agente de reclamos de cobro</h3>
+          <blockquote>Si se informa un cobro duplicado o una diferencia de importe, el sistema registra el reclamo y lo deriva a una persona, sin ejecutar otro cobro ni un reintegro automático.</blockquote>
+          <p>Un agente recibe el aviso, deja el reclamo registrado y lo pasa a una persona con los datos de la operación a la vista. Beneficio: ningún error de cobro queda sin atender y el dinero nunca se mueve sin criterio humano.</p>
+          <a href="#fig2">Ver el diagrama →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="diagramas" class="wrap">
+      <p class="eye">Dos diagramas</p>
+      <h2>El recorrido, a simple vista</h2>
+
+      <figure id="fig1">
+        <figcaption>Flujo 1 · R5 — Novedades de impacto</figcaption>
+        <svg viewBox="0 0 760 575" role="img" aria-label="Flujo de la sentencia R5">
+          <defs>
+            <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+              <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0F7A62" flood-opacity="0.1"/>
+            </filter>
+            <filter id="shadow-warn" x="-10%" y="-10%" width="120%" height="120%">
+              <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#DC2626" flood-opacity="0.12"/>
+            </filter>
+            <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,2 L8,5 L0,8 z" fill="#10b981"/>
+            </marker>
+          </defs>
+
+          <!-- Inicio -->
+          <rect x="220.0" y="10.0" width="320" height="40" rx="12" class="e" filter="url(#shadow)"/>
+          <text x="380" y="35.0" text-anchor="middle" font-weight="600">Inicio: se confirma una donación</text>
+
+          <!-- Entrada -->
+          <rect x="140.0" y="77.0" width="480" height="56" rx="12" class="n" filter="url(#shadow)"/>
+          <text x="380" y="101.0" text-anchor="middle">
+            <tspan x="380" dy="0" font-weight="600">Datos de entrada:</tspan>
+            <tspan x="380" dy="16">estado de donación · autorización · actualización · envíos previos</tspan>
+          </text>
+
+          <!-- Consulta -->
+          <rect x="140.0" y="167.0" width="480" height="46" rx="12" class="t" filter="url(#shadow)"/>
+          <text x="380" y="195.0" text-anchor="middle">
+            <tspan x="380" dy="0">El agente consulta (solo lectura): donaciones, novedades y envíos</tspan>
+          </text>
+
+          <polyline points="380,50 380,77" marker-end="url(#ah)"/>
+          <polyline points="380,133 380,167" marker-end="url(#ah)"/>
+          <polyline points="380,213 380,240" marker-end="url(#ah)"/>
+
+          <!-- Condicion -->
+          <polygon points="380,240.0 590.0,300 380,360.0 170.0,300" class="d" filter="url(#shadow)"/>
+          <text x="380" y="285.0" text-anchor="middle">
+            <tspan x="380" dy="0" font-weight="600">¿Donación confirmada Y donante autorizó</tspan>
+            <tspan x="380" dy="16">Y hay actualización disponible</tspan>
+            <tspan x="380" dy="16">Y aún no enviada a ese donante?</tspan>
+          </text>
+
+          <!-- Si / No connectors -->
+          <polyline points="170,300 170,408" marker-end="url(#ah)"/>
+          <rect x="150" y="340" width="40" height="22" rx="6" class="chip-yes-bg"/>
+          <text x="170" y="356" text-anchor="middle" class="chip-yes-txt">SÍ</text>
+
+          <polyline points="590,300 590,408" marker-end="url(#ah)"/>
+          <rect x="570" y="340" width="40" height="22" rx="6" class="chip-no-bg"/>
+          <text x="590" y="356" text-anchor="middle" class="chip-no-txt">NO</text>
+
+          <!-- Accion SI -->
+          <rect x="20.0" y="408.0" width="300" height="64" rx="12" class="n" filter="url(#shadow)"/>
+          <text x="170" y="435.0" text-anchor="middle">
+            <tspan x="170" dy="0" font-weight="600">Solicitar envío de actualización</tspan>
+            <tspan x="170" dy="16">de impacto al servicio de mensajería</tspan>
+          </text>
+
+          <!-- Accion NO (Supuesto) -->
+          <rect x="440.0" y="408.0" width="300" height="64" rx="12" class="n s"/>
+          <text x="590" y="435.0" text-anchor="middle">
+            <tspan x="590" dy="0" font-weight="600">Conservar en espera / no enviar</tspan>
+            <tspan x="590" dy="16" fill="var(--text-muted)">(supuesto del grupo: se registra motivo)</tspan>
+          </text>
+        </svg>
+        <div class="test">
+          <strong>Probá un caso:</strong>
+          <label><input type="checkbox" id="a1"> Donación confirmada</label>
+          <label><input type="checkbox" id="a2"> El donante autorizó novedades</label>
+          <label><input type="checkbox" id="a3"> Hay actualización de impacto disponible</label>
+          <label><input type="checkbox" id="a4"> Aún no fue enviada a ese donante</label>
+          <div class="out result-idle" id="o1" aria-live="polite">En espera: selecciona las condiciones del caso para evaluar la regla agéntica.</div>
+        </div>
+      </figure>
+
+      <figure id="fig2">
+        <figcaption>Flujo 2 · R6 — Reclamos de cobro</figcaption>
+        <svg viewBox="0 0 760 715" role="img" aria-label="Flujo de la sentencia R6">
+          <defs>
+            <filter id="shadow2" x="-10%" y="-10%" width="120%" height="120%">
+              <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0F7A62" flood-opacity="0.1"/>
+            </filter>
+            <filter id="shadow-warn2" x="-10%" y="-10%" width="120%" height="120%">
+              <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#DC2626" flood-opacity="0.15"/>
+            </filter>
+            <marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,2 L8,5 L0,8 z" fill="#10b981"/>
+            </marker>
+          </defs>
+
+          <!-- Inicio -->
+          <rect x="220.0" y="10.0" width="320" height="40" rx="12" class="e" filter="url(#shadow2)"/>
+          <text x="380" y="35.0" text-anchor="middle" font-weight="600">Inicio: se informa un problema con un cobro</text>
+
+          <!-- Entrada -->
+          <rect x="140.0" y="77.0" width="480" height="56" rx="12" class="n" filter="url(#shadow2)"/>
+          <text x="380" y="101.0" text-anchor="middle">
+            <tspan x="380" dy="0" font-weight="600">Datos de entrada:</tspan>
+            <tspan x="380" dy="16">ID de operación · importe esperado · cobrado · motivo informado</tspan>
+          </text>
+
+          <!-- Consulta -->
+          <rect x="140.0" y="167.0" width="480" height="46" rx="12" class="t" filter="url(#shadow2)"/>
+          <text x="380" y="195.0" text-anchor="middle">
+            <tspan x="380" dy="0">El agente consulta (solo lectura): detalle de la operación de pago</tspan>
+          </text>
+
+          <polyline points="380,50 380,77" marker-end="url(#ah2)"/>
+          <polyline points="380,133 380,167" marker-end="url(#ah2)"/>
+          <polyline points="380,213 380,240" marker-end="url(#ah2)"/>
+
+          <!-- Condicion OR -->
+          <polygon points="380,240.0 590.0,300 380,360.0 170.0,300" class="d" filter="url(#shadow2)"/>
+          <text x="380" y="290.0" text-anchor="middle">
+            <tspan x="380" dy="0" font-weight="600">¿Se informa cobro duplicado</tspan>
+            <tspan x="380" dy="16">O diferencia de importe?</tspan>
+          </text>
+
+          <!-- Si / No connectors -->
+          <polyline points="170,300 170,405" marker-end="url(#ah2)"/>
+          <rect x="150" y="340" width="40" height="22" rx="6" class="chip-yes-bg"/>
+          <text x="170" y="356" text-anchor="middle" class="chip-yes-txt">SÍ</text>
+
+          <polyline points="590,300 590,408" marker-end="url(#ah2)"/>
+          <rect x="570" y="340" width="40" height="22" rx="6" class="chip-no-bg"/>
+          <text x="590" y="356" text-anchor="middle" class="chip-no-txt">NO</text>
+
+          <!-- Registrar -->
+          <rect x="20.0" y="405.0" width="300" height="50" rx="12" class="n" filter="url(#shadow2)"/>
+          <text x="170" y="435.0" text-anchor="middle" font-weight="600">Registrar el reclamo</text>
+
+          <polyline points="170,455 170,485" marker-end="url(#ah2)"/>
+
+          <!-- Derivar humano -->
+          <rect x="20.0" y="485.0" width="300" height="50" rx="12" class="h" filter="url(#shadow2)"/>
+          <text x="170" y="515.0" text-anchor="middle" font-weight="600">Derivar a persona responsable</text>
+
+          <polyline points="170,535 170,565" marker-end="url(#ah2)"/>
+
+          <!-- Bloqueo estricto -->
+          <rect x="20.0" y="565.0" width="300" height="58" rx="12" class="w" filter="url(#shadow-warn2)"/>
+          <text x="170" y="591.0" text-anchor="middle">
+            <tspan x="170" dy="0" font-weight="700" fill="#fca5a5">BLOQUEO ESTRICTO</tspan>
+            <tspan x="170" dy="16" fill="#fecaca">Sin otro cobro ni reintegro automático</tspan>
+          </text>
+
+          <!-- No activa regla (Supuesto) -->
+          <rect x="440.0" y="408.0" width="300" height="64" rx="12" class="n s"/>
+          <text x="590" y="437.0" text-anchor="middle">
+            <tspan x="590" dy="0" font-weight="600">No se activa la regla</tspan>
+            <tspan x="590" dy="16" fill="var(--text-muted)">(supuesto del grupo: orientar a canales)</tspan>
+          </text>
+        </svg>
+        <div class="test">
+          <strong>Probá un caso:</strong>
+          <label><input type="checkbox" id="b1"> Se informa un cobro duplicado</label>
+          <label><input type="checkbox" id="b2"> Se informa una diferencia de importe</label>
+          <div class="out result-idle" id="o2" aria-live="polite">En espera: selecciona si se informa alguna incidencia para evaluar la regla agéntica.</div>
+        </div>
+      </figure>
+    </section>
+
+    <section id="detalles" class="wrap">
+      <p class="eye">Documentación Técnica</p>
+      <h2>Especificaciones funcionales de cada solución</h2>
+
+      <div class="rule-docs-group">
+        <h3 class="rule-docs-title">R5 · Agente de novedades de impacto</h3>
+
+        <details class="doc-card">
+          <summary>
+            <div class="summary-content">
+              <span class="doc-badge">[REGLA]</span>
+              <div class="doc-title-group">
+                <span class="doc-title">01 · Desglose Lógico de Condiciones</span>
+                <span class="doc-subtitle">Datos requeridos, evaluación de variables y consecuencia directa</span>
+              </div>
+            </div>
+            <svg class="summary-chevron doc-chevron" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="doc-content">
+            <div class="tech-card">
+              <span class="badge-kicker">DATOS DE ENTRADA</span>
+              <p>Estado de la donación, autorización de novedades del donante, actualización de impacto del refugio beneficiario, registro de envíos a ese donante.</p>
+            </div>
+            <div class="tech-card">
+              <span class="badge-kicker">CONDICIÓN A EVALUAR</span>
+              <p>Donación confirmada <span class="badge-operator">Y</span> donante autorizó <span class="badge-operator">Y</span> actualización disponible <span class="badge-operator">Y</span> aún no enviada a ese donante (las cuatro simultáneamente).</p>
+            </div>
+            <div class="tech-card">
+              <span class="badge-kicker">CONSECUENCIA DEL SISTEMA</span>
+              <p>El sistema solicita enviar la actualización de impacto al servicio de mensajería.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="doc-card">
+          <summary>
+            <div class="summary-content">
+              <span class="doc-badge">[EJECUCIÓN]</span>
+              <div class="doc-title-group">
+                <span class="doc-title">02 · Recorrido Operativo del Agente</span>
+                <span class="doc-subtitle">Flujo de ejecución, decisiones internas y salida generada</span>
+              </div>
+            </div>
+            <svg class="summary-chevron doc-chevron" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="doc-content">
+            <div class="tech-card">
+              <span class="badge-kicker">ENTRA</span>
+              <p>Detección de una donación confirmada en la plataforma.</p>
+            </div>
+            <div class="tech-card">
+              <span class="badge-kicker">DECIDE</span>
+              <p>El agente realiza consultas de solo lectura sobre tablas de donaciones, autorizaciones, actualizaciones y envíos previos.</p>
+            </div>
+            <div class="tech-card">
+              <span class="badge-kicker">RESULTADO ESPERADO</span>
+              <p>Generación de una única solicitud de envío de impacto por evento confirmado, evitando duplicaciones.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="doc-card">
+          <summary>
+            <div class="summary-content">
+              <span class="doc-badge">[EXCEPCIÓN]</span>
+              <div class="doc-title-group">
+                <span class="doc-title">03 · Excepciones y Supervisión Humana</span>
+                <span class="doc-subtitle">Manejo de estados no definidos, reintentos y derivación</span>
+              </div>
+            </div>
+            <svg class="summary-chevron doc-chevron" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="doc-content">
+            <div class="tech-card">
+              <span class="badge-kicker">CASO LÍMITE</span>
+              <p>Si el donante revoca su consentimiento justo antes del despacho, el agente revalida la autorización y cancela la solicitud.</p>
+            </div>
+            <div class="tech-card">
+              <span class="badge-kicker">SUPUESTO DEL GRUPO</span>
+              <p>Si alguna condición falla, el sistema no solicita el envío y registra el motivo en bitácora interna.</p>
+            </div>
+            <div class="tech-card">
+              <span class="badge-kicker">INTERVENCIÓN HUMANA</span>
+              <p>Ante fallos técnicos en el canal de envío, el caso se deriva a soporte humano sin reintentos infinitos.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="rule-docs-group" style="margin-top: 48px;">
+        <h3 class="rule-docs-title">R6 · Agente de reclamos de cobro</h3>
+
+        <details class="doc-card">
+          <summary>
+            <div class="summary-content">
+              <span class="doc-badge">[REGLA]</span>
+              <div class="doc-title-group">
+                <span class="doc-title">01 · Desglose Lógico de Condiciones</span>
+                <span class="doc-subtitle">Datos requeridos, evaluación de variables y consecuencia directa</span>
+              </div>
+            </div>
+            <svg class="summary-chevron doc-chevron" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="doc-content">
+            <div class="tech-card">
+              <span class="badge-kicker">DATOS DE ENTRADA</span>
+              <p>Aviso del cobro duplicado o diferencia de importe, vinculado a la operación de pago correspondiente.</p>
+            </div>
+            <div class="tech-card">
+              <span class="badge-kicker">CONDICIÓN A EVALUAR</span>
+              <p>Se informa un cobro duplicado <span class="badge-operator">O</span> se informa una diferencia de importe (alcanza con el reporte de una anomalía).</p>
+            </div>
+            <div class="tech-card">
+              <span class="badge-kicker">CONSECUENCIA DEL SISTEMA</span>
+              <p>Registro formal del reclamo y derivación inmediata a personal humano, aplicando bloqueo estricto de reintegros automáticos.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="doc-card">
+          <summary>
+            <div class="summary-content">
+              <span class="doc-badge">[EJECUCIÓN]</span>
+              <div class="doc-title-group">
+                <span class="doc-title">02 · Recorrido Operativo del Agente</span>
+                <span class="doc-subtitle">Flujo de ejecución, decisiones internas y salida generada</span>
+              </div>
+            </div>
+            <svg class="summary-chevron doc-chevron" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="doc-content">
+            <div class="tech-card">
+              <span class="badge-kicker">ENTRA</span>
+              <p>Reporte de incidencia ingresado por la persona donante.</p>
+            </div>
+            <div class="tech-card">
+              <span class="badge-kicker">DECIDE</span>
+              <p>El agente valida la existencia del pago (solo lectura) y clasifica el motivo del reclamo (duplicado o diferencia).</p>
+            </div>
+            <div class="tech-card">
+              <span class="badge-kicker">RESULTADO ESPERADO</span>
+              <p>Expediente de reclamo asignado a operador humano con datos completos de la transacción.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="doc-card">
+          <summary>
+            <div class="summary-content">
+              <span class="doc-badge">[EXCEPCIÓN]</span>
+              <div class="doc-title-group">
+                <span class="doc-title">03 · Excepciones y Supervisión Humana</span>
+                <span class="doc-subtitle">Manejo de estados no definidos, reintentos y derivación</span>
+              </div>
+            </div>
+            <svg class="summary-chevron doc-chevron" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="doc-content">
+            <div class="tech-card">
+              <span class="badge-kicker">CASO LÍMITE</span>
+              <p>Si la operación no se localiza de inmediato, la regla se activa por el reporte del usuario: verificar corresponde a operadores humanos.</p>
+            </div>
+            <div class="tech-card">
+              <span class="badge-kicker">SUPUESTO DEL GRUPO</span>
+              <p>Si se reportan ambos incidentes en simultáneo, se genera un único expediente consolidado con múltiples motivos.</p>
+            </div>
+            <div class="tech-card">
+              <span class="badge-kicker">INTERVENCIÓN HUMANA</span>
+              <p>Cualquier decisión sobre devolución de fondos o compensación queda reservada exclusivamente al criterio humano.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="equipo" class="wrap">
+      <p class="eye">Equipo</p>
+      <h2>Grupo 18 · Equipo Nodos</h2>
+      <p class="muted">Integrantes y aportes detallados en el README.</p>
+      <div class="team-grid">
+        <article class="team-card">
+          <div class="team-avatar">OV</div>
+          <div class="team-info">
+            <h3>Omar Virili</h3>
+            <span class="team-role">Configuración Base</span>
+            <p>Configuración base, estructura general y verificación de flujos.</p>
+          </div>
+        </article>
+        <article class="team-card">
+          <div class="team-avatar">CS</div>
+          <div class="team-info">
+            <h3>Cynthia Sotelo</h3>
+            <span class="team-role">Coordinación Agéntica</span>
+            <p>Coordinación de instrucciones y prompts al agente de programación.</p>
+          </div>
+        </article>
+        <article class="team-card">
+          <div class="team-avatar">AF</div>
+          <div class="team-info">
+            <h3>Analía Fernández</h3>
+            <span class="team-role">Documentación</span>
+            <p>Documentación del proceso agéntico y registro de evidencias de iteración.</p>
+          </div>
+        </article>
+        <article class="team-card">
+          <div class="team-avatar">JC</div>
+          <div class="team-info">
+            <h3>Jairo N. Calla Girón</h3>
+            <span class="team-role">Gestión y Vercel</span>
+            <p>Gestión de estados, pruebas en Vercel y estructura del repositorio.</p>
+          </div>
+        </article>
+        <article class="team-card">
+          <div class="team-avatar">CŚ</div>
+          <div class="team-info">
+            <h3>Cristian Suárez</h3>
+            <span class="team-role">Revisión Lógica</span>
+            <p>Revisión de sentencias, lógica proposicional y diagramas SVG.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Landing construida con asistencia de IA · Propuestas de diseño: no ejecutan agentes ni se conectan a servicios · IFTS 29 · 2026
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
